@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Appointments</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="page-header">
+        <div class="header-content">
+            <h1><i class="fas fa-calendar-check" style="color: #43a047; margin-right: 0.5rem;"></i>Appointments</h1>
+            <p>Schedule and manage patient appointments efficiently</p>
+        </div>
+        <div class="header-image">
+            <img src="assets/images/doctor 2.jpg" alt="Appointments">
+        </div>
+    </div>
+
+    <!-- 🔍 SEARCH -->
+    <div class="search-box">
+        <input type="text" id="searchAppointment" placeholder="Search appointment by name">
+        <button onclick="searchAppointments()">Search</button>
+        <button onclick="resetAppointmentSearch()">Reset</button>
+    </div>
+
+    <!-- ➕ ADD APPOINTMENT -->
+    <div class="form-section">
+        <div class="booking-section">
+            <div class="booking-form">
+                <h2><i class="fas fa-calendar-plus" style="color: #43a047; margin-right: 0.5rem;"></i>Book Your Appointment</h2>
+                <p>Schedule your visit with our healthcare professionals</p>
+                
+                <form class="appointment-form">
+                    <div class="form-group">
+                        <label for="aname"><i class="fas fa-user"></i> Patient Name</label>
+                        <input type="text" id="aname" placeholder="Enter patient name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="adate"><i class="fas fa-calendar"></i> Appointment Date</label>
+                        <input type="date" id="adate" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="atime"><i class="fas fa-clock"></i> Time</label>
+                            <input type="time" id="atime" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="ampm"><i class="fas fa-sun"></i> Period</label>
+                            <select id="ampm" required>
+                                <option value="AM">AM</option>
+                                <option value="PM">PM</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <button type="button" onclick="addAppointment()" class="book-btn">
+                        <i class="fas fa-check"></i> Book Appointment
+                    </button>
+                </form>
+            </div>
+            
+            <div class="booking-image">
+                <img src="assets/images/book your appointment.jpg" alt="Book Your Appointment">
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- 📋 LIST -->
+    <h2><i class="fas fa-list" style="color: #43a047; margin-right: 0.5rem;"></i>Appointment List</h2>
+    <ul id="appointmentList"></ul>
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

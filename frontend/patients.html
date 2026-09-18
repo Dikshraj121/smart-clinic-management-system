@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patients</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="page-header">
+        <div class="header-content">
+            <h1><i class="fas fa-user-md" style="color: #43a047; margin-right: 0.5rem;"></i>Patients</h1>
+            <p>Manage patient records efficiently and securely</p>
+        </div>
+        <div class="header-image">
+            <img src="assets/images/images.png" alt="Patient Management">
+        </div>
+    </div>
+
+    <!-- 🔍 SEARCH -->
+    <div class="search-box">
+        <input type="text" id="searchPatient" placeholder="Search patient by name">
+        <button onclick="searchPatients()">Search</button>
+        <button onclick="resetPatientSearch()">Reset</button>
+    </div>
+
+    <!-- ➕ ADD PATIENT -->
+    <div class="form-section">
+        <h2><i class="fas fa-user-plus" style="color: #43a047; margin-right: 0.5rem;"></i>Add New Patient</h2>
+        
+        <div class="patient-form">
+            <div class="form-group">
+                <label for="pname"><i class="fas fa-user"></i> Name</label>
+                <input type="text" id="pname" placeholder="Enter patient name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="page"><i class="fas fa-birthday-cake"></i> Age</label>
+                <input type="number" id="page" placeholder="Enter age" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="pdisease"><i class="fas fa-stethoscope"></i> Disease/Condition</label>
+                <input type="text" id="pdisease" placeholder="Enter disease or condition" required>
+            </div>
+            
+            <button onclick="addPatient()" class="add-btn">
+                <i class="fas fa-plus"></i> Add Patient
+            </button>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- 📋 LIST -->
+    <h2><i class="fas fa-list" style="color: #43a047; margin-right: 0.5rem;"></i>Patient List</h2>
+    <ul id="patientList"></ul>
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
